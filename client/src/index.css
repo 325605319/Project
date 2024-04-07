@@ -1,0 +1,139 @@
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: var(--font-family);
+  direction: rtl;
+  font-weight: normal;
+  top:100px;
+  background: var(--surface-ground);
+  color: var(--text-color);
+  background: url("../public/pictures/background/6.jpg");
+  padding: 1rem;
+  -webkit-font-smoothing: antialiased;
+  background-repeat: repeat-y; 
+  background-size:cover;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  max-width:100%;  
+}
+
+.div1 {
+  background-color: #0000;
+  background: var(--surface-card);
+  margin-bottom: 1rem;
+  max-width:100%;  
+}
+
+.meals{
+    background: var(--surface-card);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    
+}
+
+.card1 {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  position: absolute;
+  right: 40%;
+}
+
+.card2 {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  right: 40%;
+  direction: rtl;
+}
+
+.nav {
+  background: var(--surface-card);
+  opacity: 90%;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  direction: rtl;
+  /* position: fixed; */
+}
+
+.nameMeal{
+  direction: rtl;
+  left: 50%;
+}
+
+.footer{
+  background: var(--surface-card);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  opacity: 90%;
+  bottom: 0%;
+} 
+
+.container{
+  height: 56vh;
+}
+
+.page {
+  display: grid;
+  grid-template-rows: 50px 1fr 180px;
+  min-height: 100vh;
+}
+
+.login {
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  direction: rtl;
+} 
+
+.midi{
+  align-items: center;
+  background: var(--surface-card);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  position: relative;
+  align-items: center;
+  
+}
+.pay{
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  padding: 1rem rem
+1rem;
+  font-weight: 700;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.p-button-rounded {
+  top: 2.5vh;
+}
+
+.pay{
+  min-height: 100px;
+}
+
+.divHome{
+  font-family: var(--font-family);
+  color:rgb(78, 151, 127);
+  font-size: 30px;
+  border-style:dashed;
+  border-width:7px;
+  border-color:rgb(59, 57, 59);
+}
