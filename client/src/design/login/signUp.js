@@ -38,7 +38,7 @@ export default function SignUp() {
 
     validate: (data) => {
       let errors = {};
-
+    
       if (!data.userName) {
         errors.userName = 'שדה חובה';
       }
@@ -47,12 +47,18 @@ export default function SignUp() {
       }
       if (!data.email) {
         errors.email = 'שדה חובה';
+      } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(data.email)) {
+        errors.email = 'כתובת מייל לא תקינה';
       }
       if (!data.phone) {
         errors.phone = 'שדה חובה';
+      } else if (!/^\+?[0-9]{8,15}$/.test(data.phone)) {
+        errors.phone = 'מספר טלפון לא תקין';
       }
+    
       return errors;
     },
+    
 
     onSubmit: (data) => {
       registerFunc(data)
@@ -70,20 +76,21 @@ export default function SignUp() {
     <div >
       <div className="card1">
         <form onSubmit={formik.handleSubmit} className="flex flex-column gap-2">
-          <span className="p-float-label">
+        <span className="p-float-label">
             <Toast ref={toast} />
             <InputText
-              id="userName"
-              name="userName"
-              value={formik.values.userName}
+              id="email"
+              name="email"
+              value={formik.values.email}
               onChange={(e) => {
-                formik.setFieldValue('userName', e.target.value);
+                formik.setFieldValue('email', e.target.value);
               }}
-              className={classNames({ 'p-invalid': isFormFieldInvalid('userName') })}
+              className={classNames({ 'p-invalid': isFormFieldInvalid('email') })}
             />
-            <label htmlFor="input_value">שם משתמש</label>
+            <label htmlFor="input_value">אימייל</label>
           </span>
-          {getFormErrorMessage('userName')}
+
+          {getFormErrorMessage('email')}
           <span className="p-float-label">
             <Toast ref={toast} />
             <InputText
@@ -103,20 +110,19 @@ export default function SignUp() {
           <span className="p-float-label">
             <Toast ref={toast} />
             <InputText
-              id="email"
-              name="email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-              title="אנא הזן כתובת מייל תקינה"
-              value={formik.values.email}
+              id="userName"
+              name="userName"
+              value={formik.values.userName}
               onChange={(e) => {
-                formik.setFieldValue('email', e.target.value);
+                formik.setFieldValue('userName', e.target.value);
               }}
-              className={classNames({ 'p-invalid': isFormFieldInvalid('email') })}
+              className={classNames({ 'p-invalid': isFormFieldInvalid('userName') })}
             />
-            <label htmlFor="input_value">אימייל</label>
+            <label htmlFor="input_value">שם משתמש</label>
           </span>
-
-          {getFormErrorMessage('email')}
+          {getFormErrorMessage('userName')}
+         
+          
           <span className="p-float-label">
             <Toast ref={toast} />
             <InputText

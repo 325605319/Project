@@ -10,6 +10,7 @@ body {
   background: var(--surface-ground);
   color: var(--text-color);
   background: url("../public/pictures/background/6.jpg");
+  image-rendering:url( "../public/a.png");
   padding: 1rem;
   -webkit-font-smoothing: antialiased;
   background-repeat: repeat-y; 
@@ -129,16 +130,11 @@ body {
   min-height: 100px;
 }
 
-.divHome{
+/* .divHome{
   font-family: var(--font-family);
   color:rgb(78, 151, 127);
   font-size: 30px;
   border-style:dashed;
   border-width:7px;
   border-color:rgb(59, 57, 59);
-
-
-
-
-  
-}
+} */

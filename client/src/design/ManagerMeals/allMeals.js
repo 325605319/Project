@@ -5,11 +5,11 @@ import { useGetMealsQuery } from '../../features/meal/mealApiSlice';
 import Delete from './deleteMeal';
 import UpdateMeal from './updateMeal';
 import AddMeal from './addMeal';
+import Search from './search';
 
 export default function AllMeals() {
 
     const [layout, setLayout] = useState('grid');
-    const [kategory, setKategory] = useState('');
 
     const { data, isSuccess, isLoading, isError, error, refetch } = useGetMealsQuery()
     console.log(data);
@@ -33,7 +33,7 @@ export default function AllMeals() {
                             </div>
                             <div className="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
                                 <Delete product={product} refetch={refetch} />
-                                <UpdateMeal product={product} refetch={refetch} />
+                                <UpdateMeal product={product} refetch={refetch} /><br></br>
                                 <span className="text-2xl font-semibold">₪{product.price}</span>
                             </div>
                         </div>
@@ -85,6 +85,9 @@ export default function AllMeals() {
         return (
             <>
                 <AddMeal refetch={refetch} />
+                <Search refetch={refetch} />
+
+               
                 <div className="flex justify-content-end">
 
                     <DataViewLayoutOptions layout={layout} onChange={(e) => setLayout(e.value)} />
@@ -95,7 +98,7 @@ export default function AllMeals() {
 
     return (
         <div className="meals"><h1>כל המנות</h1>
-            {<DataView value={data} listTemplate={listTemplate} layout={layout} header={header()} />}
+            {<DataView value={data} listTemplate={listTemplate} layout={layout} header={header()}  />}
         </div>
     )
 }

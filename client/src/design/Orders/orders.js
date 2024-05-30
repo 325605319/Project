@@ -66,7 +66,7 @@ export default function Orders() {
     const header = () => {
         return (
             <>
-            סל הקניות שלך ריק, למה אתה רוצה לראות אותו????
+            סל הקניות שלך ריק
             </>
         );
     };

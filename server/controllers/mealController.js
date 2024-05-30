@@ -156,6 +156,20 @@ const getMealByKategory = async (req, res) => {
                 return res.json(meals)
     }
     return;
-}
 
-module.exports = { createNewMeal, getAllMeals, updateMeal, deleteMeal, getMealById, updateMealStatus, getMealByKategory }
+    
+    
+}
+const searchMealByName = async (req, res) => {
+        try {
+            const name=req.path
+            console.log(name)
+            const meals = await Meal.find({ name: { $regex: name, $options: 'i' } }).lean();
+            return res.json(meals);
+        } catch (error) {
+            console.error("Error while searching meals by name:", error);
+            return null;
+        }
+    };
+
+module.exports = { createNewMeal, getAllMeals, updateMeal, deleteMeal, getMealById, updateMealStatus, getMealByKategory,searchMealByName }

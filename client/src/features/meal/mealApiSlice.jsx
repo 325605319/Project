@@ -44,7 +44,13 @@ const mealApiSlice=apiSlice.injectEndpoints({
                 body:{_id:idMeal}
             })  
         }),
+        getMealsSearch: build.query({
+            query:(name)=>({
+                url:`/api/meals/search${name}`,
+                method:"GET"
+            })
+        }),
     })
 })
 
-export const{useGetMealsQuery,useAddMealMutation,useDelMealMutation,useUpMealMutation,useUpMealStatusMutation,useGetMealsByKategoryQuery}=mealApiSlice
+export const{useGetMealsQuery,useAddMealMutation,useDelMealMutation,useUpMealMutation,useUpMealStatusMutation,useGetMealsByKategoryQuery,useGetMealsSearchQuery}=mealApiSlice

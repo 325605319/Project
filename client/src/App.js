@@ -10,7 +10,7 @@ import Orders from './design/Orders/orders'
 import AllMeals from './design/ManagerMeals/allMeals'
 import UpdateMeal from './design/ManagerMeals/updateMeal'
 import HomeManager from './design/Home/manager'
-import Menu from './design/Home/Nav'
+import Menu from './design/Home/nav'
 import History from './design/Orders/history';
 
 function App() {
@@ -32,7 +32,6 @@ function App() {
             <Route path='/update' element={<UpdateMeal />}/>
             <Route path='/history' element={<History />}/>
             <Route path='/:kategory' element={<Meals />}/>
-
           </Routes>
           </div>       
       </div>
